@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Email Parser</title>
+  </head>
+  <body>
+    <script src="https://dbdwvr6p7sskw.cloudfront.net/210/files/email_data_v2.js"></script>
+    <script>
+      function mailCount(emailData) {
+        const emails = getEmailObject(emailData);
+        console.log(`Count of Email: ${emails.length}`);
+        const dateRange = emails.map(email => email.date);
+        const earliestDate = new Date(Math.min(...dateRange)).toDateString();
+        const latestDate = new Date(Math.max(...dateRange)).toDateString();
+        console.log(`Date range: ${earliestDate} - ${latestDate}`);
+      }
+
+      function getEmailObject(emailData) {
+        let emails = emailData.split('##||##')
+                              .map(email => {
+          let [sender, subject, date, recipient, body] = email.split('#/#')
+                                                                .map(content => content.trim());
+          sender = sender.replace('From: ', '');
+          subject = subject.replace('Subject: ', '');
+          date = new Date(date.replace('Date: ', ''));
+          recipient = recipient.replace('To: ', '');
+          return {sender, subject, date, recipient, body};
+        });
+        return emails
+
+      }
+
+      mailCount(emailData);
+
+      // console output
+      // Count of Email: 5
+      // Date Range: Sat Jun 25 2016 - Thu Aug 11 2016
+    </script>
+  </body>
+</html>
