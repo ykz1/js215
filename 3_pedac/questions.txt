@@ -1,0 +1,36 @@
+Problem 1
+
+- is k 0-indexed or 1-indexed?
+- case sensitive?
+- ignore whitespaces?
+- what to do if no distinct strings?
+- what to do if no strings in array?
+- empty array?
+- empty strings?
+- mutate original array?
+- always two arguments?
+
+Problem 2
+- can we sort another array that points to another array object with the same values?
+- what if empty array?
+- what if not an array?
+- what to do with repeated largest numbers like [3, 3, 3, 2, 1]
+- what to do with non-number inputs
+
+Problem
+- what if not one argument?
+- what if not string argument?
+- do characters have to be right next to each other?
+- what if no numbers?
+- what if no prime?
+- how to parse a string numbers that can be two primes or together one prime? like 37
+- ordering of output array
+- negative numbers?
+
+Problem 4
+- always 1 argument?
+- arguments other than array
+- nexted arrays? how deep to flatten?
+- what kind of comparison? what if '3' and 3
+- what order in returned array?
+
